@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>jQuery</title>
+</head>
+<body>
+    
+    <h1 id="header1" class='red-text'>JaimeTzy</h1>
+    <!-- <h1 id="header2">zz</h1>
+
+    <ul>
+        <li class="list">list1</li>
+        <li class="list">list2</li>
+        <li class="list">list3</li>
+        <li class="list">list4</li>
+        <li class="list">list5</li>
+        
+    </ul>
+
+    <button class="btn-hide">Click Me!</button>
+    <button class="btn-show">Show Me!</button> -->
+    <select id="select1">
+        <option value="option1">option1</option>
+        <option value="option2">option2</option>
+        <option value="option3">option3</option>
+    </select>
+
+    <select id="select2">
+        
+    </select>
+
+    <input type="text" name="firstname" id="name" placeholder="name">
+    <button id="btn">Enter</button>
+    <hr>
+    <br>
+    <br>
+    <button id="add_list">Add List</button>
+
+    <ul id="lists">
+    </ul>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var header1 = $("#header1");
+        // var list = $(".list");
+        // console.log(list);
+
+        ////jQuery Events
+        $(document).ready(function(){
+            
+            //     $(".btn-hide").click(function(){
+            //         header1.animate({
+            //             fontSize: "52px",
+            //             letterSpacing: "32px",
+            //         })
+
+            //     }); 
+
+            //     $(".btn-show").click(function(){
+            //         header1.slideUp();
+            //     })
+
+
+
+            // })
+
+            //GET and SET
+            // var input = $('#name');
+            // $("#btn").on("click", function() {
+                // header1.html("<em>'Hi I am learning jQuery'</em>");
+                // console.log(header1.text());
+            //     var h1 = header1.text();
+            //     $(input).val(h1);    
+            // })
+
+            $('#select1').on('change', function(){
+                var select_value = this.value;
+
+                if(select_value == 'option1'){
+                    $("#select2").html(`
+                    <option value="option5">option5</option>
+                    <option value="option6">option6</option>
+                    <option value="option8">option7</option>
+                `)
+                }
+            })
+                
+            $('#add_list').on('click', function(){
+                // $('#lists').prepend(`
+                //     <li>List item</li>
+                // `)
+
+                // $(header1).before('Hello');
+                $('#header1').toggleClass('green-text');
+            });
+
+
+
+            //document ready
+        })
+    </script>
+</body>
+</html>
